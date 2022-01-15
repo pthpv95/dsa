@@ -1,30 +1,33 @@
-// let numsArr = [1, 2, 3];
-// let result = []
-// var permute = function (nums, l, r) {
-//   if (l & r && l === r) {
-//     result.push(nums)
-//   } else {
-//     if (!l) {
-//       l = 0
-//     }
-//     if (!r) {
-//       r = nums.length - 1
-//     }
-//     for (let i = l; i <= r; i++) {
-//       let swapnums = swap(nums, l, i)
-//       permute(swapnums, l + 1, r)
-//       nums = swap(nums, l, i)
-//     }
-//     return result;
-//   }
-// };
+let numsArr = [1, 2, 3];
 
-// function swap(nums, i, j) {
-//   let temp = nums[i]
-//   nums[i] = nums[j]
-//   nums[j] = temp;
-//   return [...nums];
-// }
+var permute = function (nums) {
+  let result = []
+
+  function swap(nums, i, j) {
+    const temp = nums[i]
+    nums[i] = nums[j]
+    nums[j] = temp;
+    return [...nums];
+  }
+
+  function findPermutations(nums, l = 0) {
+    if (l === nums.length - 1) {
+      result.push(nums)
+    }
+
+    for (let i = l; i < nums.length; i++) {
+      let swapped = swap(nums, l, i);
+      findPermutations(swapped, l + 1)
+      swap(nums, l, i)
+    }
+  }
+  findPermutations(nums)
+  return result;
+};
+
+// nums = [1, 2, 3]
+// a = permute(nums);
+// console.log(a);
 
 // backtracking solution
 var permute = function (nums) {
@@ -51,8 +54,6 @@ var permute = function (nums) {
 
 a = permute([1,2,3]);
 console.log(a);
-
-
 
 // function permute(str, l, r) {
 //   if (l == r) {

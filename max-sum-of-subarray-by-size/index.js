@@ -40,6 +40,31 @@ let smallestSubArrayOfGivenSum = (target, nums) => {
   }
   return windowSize === Number.MAX_VALUE ? 0 : windowSize;
 }
-nums = [4, 2, 2, 7, 8, 1, 2, 8, 1, 0]
-k = 3
+
+function lengthOfLongestSubstringKDistinct(str, k) {
+  let max = 0
+  let map = {}
+  let leftWindows = 0;
+  for (let i = 0; i < str.length; i++) {
+    map[str[i]] = (map[str[i]] || 0) + 1;
+
+    while (Object.keys(map).length > k) {
+      map[str[leftWindows]]--;
+      if (map[str[leftWindows]] === 0) {
+        delete map[str[leftWindows]];
+      }
+      leftWindows++
+    }
+    max = Math.max(max, i - leftWindows + 1)
+  }
+  return max;
+}
+
+
+let nums = [4, 2, 2, 7, 8, 1, 2, 8, 1, 0]
+let k = 3
 console.log(smallestSubArrayOfGivenSum(7, [2, 3, 1, 2, 4, 3]));
+let str = 'aaahhibc';
+// test cases
+// aba k = 1
+console.log(lengthOfLongestSubstringKDistinct(str, 2)); // 3

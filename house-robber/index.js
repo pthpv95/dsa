@@ -1,5 +1,6 @@
 var rob = function (nums) {
   let currMax = 0, preMax = 0
+  // rob1, rob2, n + 1, n + 2
   for (let i = 0; i < nums.length; i++) {
     let tmp = currMax
     currMax = Math.max(currMax, nums[i] + preMax)
