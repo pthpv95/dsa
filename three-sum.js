@@ -7,6 +7,7 @@ var threeSum = function (nums) {
   let result = []
 
   for (let i = 0; i < nums.length; i++) {
+    // check current number is same as previous then continue
     if (i > 0 && nums[i] === nums[i - 1]) {
       continue;
     }
@@ -35,8 +36,6 @@ nums = [-1, 0, 1, 2, -1, -4]
 nums = [-1,0,1,2,-1,-4,-2,-3,3,0,4]
 // nums = [0, 0, 0, 0]
 console.log(threeSum(nums));
-
-
 var twoSum = function (numbers, target) {
   let result = []
   let dp = {}

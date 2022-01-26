@@ -48,10 +48,18 @@ class Solution:
     return res
 
   def findSmallestNumber(self, nums: List[int], curr: int):
-    
     return
+  
+  def reverseBits(self, n: int) -> int:
+    ans = 0
+    for i in range(32):
+      ans<<=1
+      ans = ans | (n & 1)
+      n>>=1
+    return ans
 
 nums = [1,2,3]
 sl = Solution()
 # print(sl.longestPalindrome('1221'))
-print(sl.findSmallestNumber([1, 3, 2, -1, 5])) // -1
+# print(sl.findSmallestNumber([1, 3, 2, -1, 5]))
+print(sl.reverseBits(964176192))

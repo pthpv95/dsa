@@ -30,6 +30,7 @@ function numToBinary(num) {
   }
   return neg ? -Number(result) : Number(result);
 }
+
 // 1010
 function binaryToDecimal(binary) {
   binary = binary.toString()
@@ -53,12 +54,10 @@ console.log(binaryToDecimal(10011));
 // console.log(getSum(1, 2));
 
 console.log(x);
-// & return 1 when both are 1
-// | return 0 when both are 0
-// ~ return 0 when bit is 1 and 1 when bit is 0
 
-
-// left shifting = value x 2 power of shifting value
 let y = 5;
 // 0000 0100 -> 0000 1000
-console.log(y << 1);
+// console.log(y << 1);
+console.log(y>>1);
+
+// TODO: Need visualization
