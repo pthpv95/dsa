@@ -14,6 +14,6 @@ var maxSubArray = function (nums) {
   }
   return max;
 };
-
-nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+// total amx sub array item
+nums = [-2, 1, -3, -1, 2, 1, -5]
 console.log(maxSubArray(nums));

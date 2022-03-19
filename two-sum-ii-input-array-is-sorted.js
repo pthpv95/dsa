@@ -26,8 +26,8 @@ var twoSum = function (numbers, target) {
   for (let i = 0; i < numbers.length; i++) {
     let idx = search(numbers, target - numbers[i])
     if (idx > -1) {
-      if(idx === i){
-        return [i + 1, idx + 2]  
+      if (idx === i) {
+        return [i + 1, idx + 2]
       }
       return [i + 1, idx + 1]
     }
@@ -37,14 +37,14 @@ var twoSum = function (numbers, target) {
 
 var twoSum = (numbers, target) => {
   let l = 0, r = numbers.length - 1
-  while(r > l){
+  while (l < r) {
     let sum = numbers[l] + numbers[r]
-    if(target === sum){
+    if (target === sum) {
       return [l + 1, r + 1]
     }
-    if(sum < target){
+    if (sum < target) {
       l++
-    }else{
+    } else {
       r--
     }
   }
@@ -54,7 +54,7 @@ var twoSum = (numbers, target) => {
 
 // nums = [0,0,3,4]
 // target = 0
-nums = [1,2,3,4,4,9,56,90]
+nums = [1, 2, 3, 4, 4, 9, 56, 90]
 target = 8
 
 // console.log(search(nums, 0));

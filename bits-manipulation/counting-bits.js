@@ -4,6 +4,7 @@
  */
 var countBits = function (n) {
   // naive approach O(n log n)
+  
   // let res = []
   // for(let i = 0; i <= n; i++){
   //   res.push(count1Bit(i))

@@ -25,6 +25,8 @@ var missingNumber = function (nums) {
   //   }
   // }
   // return l;
+
+  // idea: count total number and see the difference of 2 arrays
   // kinda like sum a - sum b
   // XOR operator solution
   let res = nums.length;

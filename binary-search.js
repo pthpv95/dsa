@@ -3,7 +3,7 @@
 let binarySearch = (nums, value) => {
   let left = 0, right = nums.length - 1
   while (left <= right) {
-    let mid = Math.floor(left + right) / 2
+    let mid = left + right >> 1 // same as Math.floor of value / 2
     if (nums[mid] === value) {
       return true
     }
@@ -22,7 +22,7 @@ let binarySearchRecursive = (nums, value, left, right) => {
     return false
   }
 
-  let mid = Math.floor((left + right) / 2)
+  let mid = left + right >> 1
   if (nums[mid] === value) return true
 
   if (value < nums[mid]) {
@@ -33,6 +33,7 @@ let binarySearchRecursive = (nums, value, left, right) => {
 }
 
 let nums = [1, 3, 4, 5, 6, 7];
-let result = binarySearchRecursive(nums, 7, 0, nums.length - 1)
+// let result = binarySearchRecursive(nums, 7, 0, nums.length - 1)
+let result = binarySearch(nums, 6);
 
 console.log('found it ?', result);

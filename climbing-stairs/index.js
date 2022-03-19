@@ -1,3 +1,5 @@
+// bottom up
+
 // var climbStairs = function (n) {
 //   let one = 1, two = 1
 //   for (let i = 0; i < n - 1; i++) {
@@ -8,6 +10,8 @@
 //   return one;
 // };
 
+
+// top-down
 var climbStairs = function (n) {
   const memo = {};
   const helper = (n) => {

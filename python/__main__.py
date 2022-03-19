@@ -57,9 +57,31 @@ class Solution:
       ans = ans | (n & 1)
       n>>=1
     return ans
+  
+  def lengthOfLIS(slf, nums: List[int]) -> int:
+    LIS = [1] * len(nums)
+    for i in range(len(nums) -1,-1,-1):
+      for j in range(i+1, len(nums)):
+        if nums[i] < nums[j]:
+          LIS[i]= max(LIS[i], 1 + LIS[j])
+    return max(LIS)
+
+  def fib(self, n: int):
+    fib = [0] * n
+    fib[1] = 1
+    for i in range(2, n):
+      fib[i] = fib[i-1]+fib[i-2]
+    return fib[n-1]
 
 nums = [1,2,3]
 sl = Solution()
 # print(sl.longestPalindrome('1221'))
 # print(sl.findSmallestNumber([1, 3, 2, -1, 5]))
-print(sl.reverseBits(964176192))
+# print(sl.reverseBits(964176192))
+# print( dp = [float('inf')] * (amount + 1))
+# print(sl.lengthOfLIS([0,1,0,3,2,3]))
+print(sl.fib(10))
+text2 = 'ace'
+text1 = 'abcde'
+dp = [[0 for j in range(len(text2)+1)] for i in range(len(text1)+1)]
+print(dp)
