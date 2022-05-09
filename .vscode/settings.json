@@ -1,3 +1,4 @@
 {
-  "excalidraw.theme": "dark"
+  "excalidraw.theme": "dark",
+  "python.formatting.provider": "autopep8"
 }

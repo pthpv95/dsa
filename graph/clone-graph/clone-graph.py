@@ -33,3 +33,5 @@ sl = Solution()
 node = sl.buildGraph()
 clonedGraph = sl.cloneGraph(node)
 print(clonedGraph)
+
+# general dfs: check visited -> if visited then return else set to node to map and keep run dfs for its neighbors
